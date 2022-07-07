@@ -6,23 +6,36 @@
 /*   By: julmuntz <julmuntz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 13:59:36 by julmuntz          #+#    #+#             */
-/*   Updated: 2022/07/07 15:05:28 by julmuntz         ###   ########.fr       */
+/*   Updated: 2022/07/07 20:12:21 by julmuntz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+void	convert_type(char type)
 {
-	va_list	ap;
-	va_start(ap, format);
-	char	*str;
+	// if (type == 'c')
+	// if (type == 's')
+	// if (type == 'p')
+	// if (type == 'd')
+	// if (type == 'i')
+	// if (type == 'u')
+	// if (type == 'x')
+	// if (type == 'X')
+	// if (type == '%')
+}
 
+int	ft_printf(const char *str, ...)
+{
+	int		i;
+	va_list	ap;
+
+	va_start(ap, str);
 	str = va_arg(ap, char *);
-	while (str)
+	while (str[i])
 	{
-		ft_putstr(str);
-		str = va_arg(ap, char *);
+		if (str[i] == '%')
+			convert_type(str[i + 1]);
 	}
 	va_end(ap);
 	return (0);
@@ -30,6 +43,11 @@ int	ft_printf(const char *format, ...)
 
 int	main(int ac, char **av)
 {
-	ft_printf("Atrsdthbtr\n", "Bikyfutd6rye\n", "Ckhjgyfhtdg\n", "Djhcgnxfds\n", "Erhsjgafv8ps\n");
+	int number;
+	char a;
+
+	number = 43657;
+	a = 'q';
+	ft_printf("Atrsd - %d - thbtr\n", number, a);
 	return (0);
 }
