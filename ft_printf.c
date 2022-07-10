@@ -6,7 +6,7 @@
 /*   By: julmuntz <julmuntz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 13:59:36 by julmuntz          #+#    #+#             */
-/*   Updated: 2022/07/10 18:08:19 by julmuntz         ###   ########.fr       */
+/*   Updated: 2022/07/10 20:14:32 by julmuntz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,13 @@ int	convert_type(va_list ap, int type)
 	if (type == 'c')
 		convert_char(va_arg(ap, int));
 	if (type == 's')
-		convert_str(va_arg(ap, char *));
+		convert_string(va_arg(ap, char *));
 	if (type == 'd')
-		convert_digit(va_arg(ap, int));
+		convert_decimal(va_arg(ap, int));
+	if (type == 'i')
+		convert_integer(va_arg(ap, int));
+	if (type == 'u')
+		convert_unsigned(va_arg(ap, int));
 }
 
 int	ft_printf(const char *str, ...)
@@ -46,16 +50,18 @@ int	ft_printf(const char *str, ...)
 
 /*
 
-int	main(int ac, char **av)
+int	main(void)
 {
-	char character = 'a';
-	char *string = "Bonjour";
-	int digit = 117;
-	printf("Length:\t\t%d\n", ft_printf(
-		"Character:\t%c\nString:\t\t%s\nDigit:\t\t%d\n", character, string, digit));
-	puts("");
-	printf("Length:\t\t%d\n", printf(
-		"Character:\t%c\nString:\t\t%s\nDigit:\t\t%d\n", character, string, digit));
+	char c = 'a';
+	char *s = "Hello";
+	int d = 4294967295;
+	int i = 4294967295;
+	int u = 4294967295;
+	printf("\nLen: %d\n", ft_printf(
+		"\nC: %c\nS: %s\nD: %d\nI: %i\nU: %u\n", c, s, d, i, u));
+	puts("\n———————————————");
+	printf("\nLen: %d\n", printf(
+		"\nC: %c\nS: %s\nD: %d\nI: %i\nU: %u\n", c, s, d, i, u));
 	return (0);
 }
 

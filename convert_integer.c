@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   convert_integer.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julmuntz <julmuntz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/06 14:13:21 by julmuntz          #+#    #+#             */
-/*   Updated: 2022/07/10 19:51:13 by julmuntz         ###   ########.fr       */
+/*   Created: 2022/07/10 18:58:31 by julmuntz          #+#    #+#             */
+/*   Updated: 2022/07/10 19:03:01 by julmuntz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include "libft/libft.h"
-# include <stdarg.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
+int	convert_integer(int integer)
+{
+	int	len;
 
-int		convert_char(char c);
-int		convert_string(char *s);
-int		convert_decimal(int decimal);
-int		convert_integer(int integer);
-int		convert_unsigned(unsigned int decimal_u);
-int		convert_percent(char percent);
-
-#endif
+	len = ft_nbrlen(integer);
+	ft_putnbr(integer);
+	return (len);
+}

@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   convert_unsigned.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julmuntz <julmuntz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/06 14:13:21 by julmuntz          #+#    #+#             */
-/*   Updated: 2022/07/10 19:51:13 by julmuntz         ###   ########.fr       */
+/*   Created: 2022/07/10 19:21:02 by julmuntz          #+#    #+#             */
+/*   Updated: 2022/07/10 19:50:52 by julmuntz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include "libft/libft.h"
-# include <stdarg.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
+int	convert_unsigned(unsigned int decimal_u)
+{
+	unsigned int	len;
 
-int		convert_char(char c);
-int		convert_string(char *s);
-int		convert_decimal(int decimal);
-int		convert_integer(int integer);
-int		convert_unsigned(unsigned int decimal_u);
-int		convert_percent(char percent);
-
-#endif
+	len = ft_nbrlen_u(decimal_u);
+	ft_putnbr_u(decimal_u);
+	return (len);
+}
