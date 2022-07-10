@@ -6,13 +6,13 @@
 /*   By: julmuntz <julmuntz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 13:59:36 by julmuntz          #+#    #+#             */
-/*   Updated: 2022/07/10 20:14:32 by julmuntz         ###   ########.fr       */
+/*   Updated: 2022/07/10 21:04:41 by julmuntz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	convert_type(va_list ap, int type)
+int	convert_type(va_list ap, char type)
 {
 	if (type == 'c')
 		convert_char(va_arg(ap, int));

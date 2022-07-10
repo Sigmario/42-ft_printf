@@ -6,7 +6,7 @@
 /*   By: julmuntz <julmuntz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 14:13:21 by julmuntz          #+#    #+#             */
-/*   Updated: 2022/07/10 19:51:13 by julmuntz         ###   ########.fr       */
+/*   Updated: 2022/07/10 20:21:39 by julmuntz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,5 @@ int		convert_string(char *s);
 int		convert_decimal(int decimal);
 int		convert_integer(int integer);
 int		convert_unsigned(unsigned int decimal_u);
-int		convert_percent(char percent);
 
 #endif
