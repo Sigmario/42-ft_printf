@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert_string.c                                   :+:      :+:    :+:   */
+/*   convert_hex_pointer.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julmuntz <julmuntz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/10 14:08:39 by julmuntz          #+#    #+#             */
-/*   Updated: 2022/07/11 16:34:05 by julmuntz         ###   ########.fr       */
+/*   Created: 2022/07/11 16:56:12 by julmuntz          #+#    #+#             */
+/*   Updated: 2022/07/11 20:27:14 by julmuntz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	convert_string(char *s)
+int	convert_hex_pointer(unsigned long int hex_pointer)
 {
-	int	i;
+	unsigned long int	len;
 
-	i = 0;
-	while (s[i])
-		ft_putchar(s[i++]);
-	return (i);
+	len = ft_hexlen_ul(hex_pointer);
+	write(1, "0x", 2);
+	ft_puthex_ul(hex_pointer);
+	return (len + 2);
 }

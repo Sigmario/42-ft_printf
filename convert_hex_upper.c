@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert_string.c                                   :+:      :+:    :+:   */
+/*   convert_hex_upper.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julmuntz <julmuntz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/10 14:08:39 by julmuntz          #+#    #+#             */
-/*   Updated: 2022/07/11 16:34:05 by julmuntz         ###   ########.fr       */
+/*   Created: 2022/07/11 19:48:20 by julmuntz          #+#    #+#             */
+/*   Updated: 2022/07/11 20:23:07 by julmuntz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	convert_string(char *s)
+int	convert_hex_upper(unsigned int hex_upper)
 {
-	int	i;
+	unsigned int	len;
 
-	i = 0;
-	while (s[i])
-		ft_putchar(s[i++]);
-	return (i);
+	len = ft_hexlen_u(hex_upper);
+	ft_puthex_u_upper(hex_upper);
+	return (len);
 }
