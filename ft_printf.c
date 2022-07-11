@@ -6,7 +6,7 @@
 /*   By: julmuntz <julmuntz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 13:59:36 by julmuntz          #+#    #+#             */
-/*   Updated: 2022/07/11 20:30:26 by julmuntz         ###   ########.fr       */
+/*   Updated: 2022/07/11 22:54:18 by julmuntz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int	convert_type(va_list ap, int type)
 		return (convert_hex_lower(va_arg(ap, int)));
 	if (type == 'X')
 		return (convert_hex_upper(va_arg(ap, int)));
+	if (type == '%')
+		return (convert_percent(va_arg(ap, int)));
 	return (0);
 }
 
@@ -64,30 +66,32 @@ int	main(void)
 	char c = 'a';
 	char *s = "Hello";
 	char *p = s;
-	int d = 4294967295;
-	int i = 4294967295;
+	int d = -657895;
+	int i = -876;
 	int u = 4294967295;
-	int x = 17656;
-	int X = 17656;
-	printf("\nLen: %d\n", ft_printf("\n\
-c: %c\n\
-s: %s\n\
-p: %p\n\
-d: %d\n\
-i: %i\n\
-u: %u\n\
-x: %x\n\
-X: %X\n", c, s, p, d, i, u, x, X));
-	puts("\n———————————————");
-	printf("\nLen: %d\n", printf("\n\
-c: %c\n\
-s: %s\n\
-p: %p\n\
-d: %d\n\
-i: %i\n\
-u: %u\n\
-x: %x\n\
-X: %X\n", c, s, p, d, i, u, x, X));
+	int x = 1977;
+	int X = 7854932;
+	printf("\n\tLength: %d\n", ft_printf("\n\
+\tCharacter:		%c\n\
+\tString:			%s\n\
+\tPointer address:	%p\n\
+\tDecimal:		%d\n\
+\tInteger:		%i\n\
+\tUnsigned decimal:	%u\n\
+\tLowercase hexadecimal:	%x\n\
+\tUppercase hexadecimal:	%X\n\
+\tPercentage sign: 	%%%%%%\n", c, s, p, d, i, u, x, X));
+	puts("\n——————————————————————————————————————————————");
+	printf("\n\tLength: %d\n", printf("\n\
+\tCharacter:		%c\n\
+\tString:			%s\n\
+\tPointer address:	%p\n\
+\tDecimal:		%d\n\
+\tInteger:		%i\n\
+\tUnsigned decimal:	%u\n\
+\tLowercase hexadecimal:	%x\n\
+\tUppercase hexadecimal:	%X\n\
+\tPercentage sign: 	%%%%%%\n", c, s, p, d, i, u, x, X));
 	return (0);
 }
 
