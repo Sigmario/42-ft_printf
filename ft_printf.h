@@ -6,7 +6,7 @@
 /*   By: julmuntz <julmuntz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 14:13:21 by julmuntz          #+#    #+#             */
-/*   Updated: 2022/07/11 22:40:57 by julmuntz         ###   ########.fr       */
+/*   Updated: 2022/07/12 15:06:19 by julmuntz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 
+int		ft_printf(const char *str, ...);
 int		convert_char(char c);
 int		convert_string(char *s);
 int		convert_hex_pointer(unsigned long int hex_pointer);
