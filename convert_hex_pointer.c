@@ -6,7 +6,7 @@
 /*   By: julmuntz <julmuntz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:56:12 by julmuntz          #+#    #+#             */
-/*   Updated: 2022/07/11 20:27:14 by julmuntz         ###   ########.fr       */
+/*   Updated: 2022/07/12 18:08:37 by julmuntz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ int	convert_hex_pointer(unsigned long int hex_pointer)
 	unsigned long int	len;
 
 	len = ft_hexlen_ul(hex_pointer);
-	write(1, "0x", 2);
+	if (hex_pointer)
+		write(1, "0x", 2);
+	else
+		return (write(1, "(nil)", 5));
 	ft_puthex_ul(hex_pointer);
 	return (len + 2);
 }

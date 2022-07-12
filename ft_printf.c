@@ -6,7 +6,7 @@
 /*   By: julmuntz <julmuntz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 13:59:36 by julmuntz          #+#    #+#             */
-/*   Updated: 2022/07/11 22:54:18 by julmuntz         ###   ########.fr       */
+/*   Updated: 2022/07/12 18:05:31 by julmuntz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int	ft_printf(const char *str, ...)
 	i = 0;
 	va_start(ap, str);
 	len = 0;
+	if (str == NULL)
+		return (0);
 	while (str[i])
 	{
 		if (str[i] == '%')
@@ -64,11 +66,11 @@ int	ft_printf(const char *str, ...)
 int	main(void)
 {
 	char c = 'a';
-	char *s = "Hello";
+	char *s = "hfdgkbj";
 	char *p = s;
 	int d = -657895;
 	int i = -876;
-	int u = 4294967295;
+	unsigned int u = 4294967295;
 	int x = 1977;
 	int X = 7854932;
 	printf("\n\tLength: %d\n", ft_printf("\n\
