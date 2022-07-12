@@ -6,7 +6,7 @@
 /*   By: julmuntz <julmuntz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 13:59:36 by julmuntz          #+#    #+#             */
-/*   Updated: 2022/07/12 18:05:31 by julmuntz         ###   ########.fr       */
+/*   Updated: 2022/07/12 20:13:31 by julmuntz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	convert_type(va_list ap, int type)
 {
 	if (type == 'c')
-		return (convert_char(va_arg(ap, int)));
+		return (convert_char((char)va_arg(ap, int)));
 	if (type == 's')
 		return (convert_string(va_arg(ap, char *)));
 	if (type == 'p')
@@ -31,7 +31,10 @@ int	convert_type(va_list ap, int type)
 	if (type == 'X')
 		return (convert_hex_upper(va_arg(ap, int)));
 	if (type == '%')
-		return (convert_percent(va_arg(ap, int)));
+	{
+		ft_putchar('%');
+		return (1);
+	}
 	return (0);
 }
 
@@ -66,7 +69,7 @@ int	ft_printf(const char *str, ...)
 int	main(void)
 {
 	char c = 'a';
-	char *s = "hfdgkbj";
+	char *s = "Hello";
 	char *p = s;
 	int d = -657895;
 	int i = -876;

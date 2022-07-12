@@ -6,7 +6,7 @@
 /*   By: julmuntz <julmuntz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 14:13:21 by julmuntz          #+#    #+#             */
-/*   Updated: 2022/07/12 15:06:19 by julmuntz         ###   ########.fr       */
+/*   Updated: 2022/07/12 20:06:43 by julmuntz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <limits.h>
 # include <stdio.h>
 
 int		ft_printf(const char *str, ...);
@@ -28,6 +29,5 @@ int		convert_integer(int integer);
 int		convert_unsigned(unsigned int decimal_u);
 int		convert_hex_lower(unsigned int hex_lower);
 int		convert_hex_upper(unsigned int hex_upper);
-int		convert_percent(char percent_sign);
 
 #endif

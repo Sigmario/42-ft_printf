@@ -6,7 +6,7 @@
 /*   By: julmuntz <julmuntz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 15:19:36 by julmuntz          #+#    #+#             */
-/*   Updated: 2022/07/10 19:44:07 by julmuntz         ###   ########.fr       */
+/*   Updated: 2022/07/12 19:50:43 by julmuntz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	convert_decimal(int decimal)
 {
 	int	len;
 
+	if (decimal == INT_MIN)
+		return (write(1, "-2147483648", 11));
 	len = ft_nbrlen(decimal);
 	ft_putnbr(decimal);
 	return (len);
