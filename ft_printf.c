@@ -6,7 +6,7 @@
 /*   By: julmuntz <julmuntz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 13:59:36 by julmuntz          #+#    #+#             */
-/*   Updated: 2022/07/12 20:13:31 by julmuntz         ###   ########.fr       */
+/*   Updated: 2022/07/13 16:11:24 by julmuntz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,7 @@ int	convert_type(va_list ap, int type)
 	if (type == 'X')
 		return (convert_hex_upper(va_arg(ap, int)));
 	if (type == '%')
-	{
-		ft_putchar('%');
-		return (1);
-	}
+		return (ft_putchar('%'));
 	return (0);
 }
 
